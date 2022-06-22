@@ -1,0 +1,27 @@
+apiVersion: kpt.dev/v1
+kind: Kptfile
+metadata: # kpt-merge: /name
+  name: name
+  annotations:
+    config.kubernetes.io/local-config: "true"
+upstream:
+  type: git
+  git:
+    repo: https://github.com/natasha41575/deployment.git
+    directory: backend
+    ref: drafts/backend/v7
+upstreamLock:
+  type: git
+  git:
+    repo: https://github.com/natasha41575/deployment.git
+    directory: backend
+    ref: drafts/backend/v7
+    commit: 898be0e278b2b1aeb5ce9f15bac8fb5bcea0faa4
+info:
+  description: kpt package for provisioning namespace
+pipeline:
+  mutators:
+  - image: gcr.io/kpt-fn/set-namespace:v0.4.1
+    configPath: package-context.yaml
+  - image: gcr.io/kpt-fn/apply-replacements:v0.1.1
+    configPath: update-rolebinding.yaml
