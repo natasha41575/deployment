@@ -1,0 +1,19 @@
+apiVersion: kpt.dev/v1
+kind: Kptfile
+metadata: # kpt-merge: /basenes-edit-clone
+  name: basenes-edit-clone
+upstream:
+  type: git
+  git:
+    repo: https://github.com/natasha41575/deployment.git
+    directory: basens-edit
+    ref: drafts/basens-edit/v0
+upstreamLock:
+  type: git
+  git:
+    repo: https://github.com/natasha41575/deployment.git
+    directory: basens-edit
+    ref: drafts/basens-edit/v0
+    commit: 1d4d6e24617a00f88416b016f942016c51cfcd63
+info:
+  description: sample description
