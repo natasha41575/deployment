@@ -7,13 +7,13 @@ upstream:
   git:
     repo: https://github.com/natasha41575/deployment.git
     directory: basens-edit
-    ref: drafts/basens-edit/v0
+    ref: basens-edit/v2
 upstreamLock:
   type: git
   git:
     repo: https://github.com/natasha41575/deployment.git
     directory: basens-edit
-    ref: drafts/basens-edit/v0
-    commit: 1d4d6e24617a00f88416b016f942016c51cfcd63
+    ref: basens-edit/v2
+    commit: 789abe525bd9b8fbc0a3cb973c489c9c608af53b
 info:
   description: sample description
